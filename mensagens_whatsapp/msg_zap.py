@@ -21,16 +21,16 @@ if __name__ == '__main__':
         input_box_search.click()
         time.sleep(1)
         input_box_search.send_keys(contact)
-        time.sleep(1)
+        time.sleep(5)
 
-        selected_contact = driver.find_element_by_xpath(f"//span[@title='{contact}']")
-
+        print(list(driver.find_elements_by_class_name("matched-text")))
+        selected_contact = driver.find_elements_by_class_name("matched-text")[-1]
         selected_contact.click()
 
         time.sleep(2)
 
-        # inp_xpath = '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
-        # input_box = driver.find_element_by_xpath(inp_xpath)
+        inp_xpath = '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
+        input_box = driver.find_element_by_xpath(inp_xpath)
         time.sleep(1)
         # input_box.send_keys(text + Keys.ENTER)
         time.sleep(1)
